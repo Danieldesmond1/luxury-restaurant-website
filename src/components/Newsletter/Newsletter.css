@@ -1,0 +1,274 @@
+.newsletter-section{
+    position:relative;
+    padding:9rem 0;
+    overflow:hidden;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+.newsletter-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10,10,10,.82),
+            rgba(10,10,10,.90)
+        );
+    z-index:1;
+}
+
+.newsletter-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,
+        rgba(200,169,106,.16),
+        transparent 40%),
+        radial-gradient(circle at bottom right,
+        rgba(200,169,106,.10),
+        transparent 45%);
+    pointer-events:none;
+    z-index:2;
+}
+
+.newsletter-wrapper{
+    position:relative;
+    z-index:5;
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.newsletter-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:.8rem;
+    color:var(--color-secondary);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:.82rem;
+    font-weight:600;
+}
+
+.newsletter-tag::before,
+.newsletter-tag::after{
+    content:"";
+    width:60px;
+    height:1px;
+    background:var(--color-secondary);
+}
+
+.newsletter-wrapper h2{
+    margin:1.5rem 0;
+    color:white;
+    font-family:var(--heading-font);
+    font-size:clamp(3rem,6vw,5.3rem);
+    line-height:1.05;
+}
+
+.newsletter-wrapper p{
+    max-width:700px;
+    margin:0 auto;
+    color:rgba(255,255,255,.80);
+    font-size:1.08rem;
+    line-height:2;
+}
+
+.newsletter-form{
+    margin-top:3.5rem;
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:70px;
+    padding:.6rem;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+.newsletter-form input{
+    flex:1;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+    font-size:1rem;
+    padding:1rem 1.5rem;
+}
+
+.newsletter-form input::placeholder{
+    color:rgba(255,255,255,.45);
+}
+
+.newsletter-form button{
+    border:none;
+    cursor:pointer;
+    background:var(--color-secondary);
+    color:#111;
+    font-weight:700;
+    padding:1rem 2.3rem;
+    border-radius:999px;
+    transition:.35s;
+    white-space:nowrap;
+}
+
+.newsletter-form button:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 15px 35px rgba(200,169,106,.35);
+}
+
+.newsletter-benefits{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.5rem;
+    margin-top:3.5rem;
+}
+
+.benefit{
+    color:white;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:18px;
+    padding:1.2rem;
+    font-size:.95rem;
+    transition:.35s;
+}
+
+.benefit:hover{
+    transform:translateY(-6px);
+    border-color:rgba(200,169,106,.40);
+    background:rgba(255,255,255,.08);
+}
+
+.newsletter-glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    pointer-events:none;
+}
+
+.glow-one{
+    width:280px;
+    height:280px;
+    background:rgba(200,169,106,.18);
+    top:-60px;
+    left:-80px;
+}
+
+.glow-two{
+    width:320px;
+    height:320px;
+    background:rgba(200,169,106,.12);
+    right:-100px;
+    bottom:-120px;
+}
+
+.newsletter-wrapper{
+    animation:newsletterFade 1s ease forwards;
+}
+
+@keyframes newsletterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@media(max-width:992px){
+
+.newsletter-section{
+    background-attachment:scroll;
+}
+
+.newsletter-benefits{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.newsletter-form{
+    flex-direction:column;
+    border-radius:30px;
+    padding:1.2rem;
+    gap:1rem;
+}
+
+.newsletter-form input{
+    width:100%;
+    text-align:center;
+    padding:1rem;
+}
+
+.newsletter-form button{
+    width:100%;
+}
+
+}
+
+@media(max-width:768px){
+
+.newsletter-section{
+    padding:7rem 0;
+}
+
+.newsletter-wrapper h2{
+    font-size:2.8rem;
+}
+
+.newsletter-wrapper p{
+    font-size:1rem;
+}
+
+.newsletter-tag{
+    letter-spacing:3px;
+    font-size:.75rem;
+}
+
+.newsletter-tag::before,
+.newsletter-tag::after{
+    width:35px;
+}
+
+.newsletter-benefits{
+    grid-template-columns:1fr;
+    gap:1rem;
+}
+
+}
+
+@media(max-width:480px){
+
+.newsletter-wrapper h2{
+    font-size:2.3rem;
+}
+
+.newsletter-form{
+    padding:1rem;
+}
+
+.newsletter-form input{
+    font-size:.95rem;
+}
+
+.newsletter-form button{
+    font-size:.95rem;
+    padding:.95rem 1.5rem;
+}
+
+.benefit{
+    padding:1rem;
+}
+
+}

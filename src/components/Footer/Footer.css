@@ -1,0 +1,433 @@
+.footer{
+    background:#090909;
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+}
+
+.footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,
+    rgba(200,169,106,.08),
+    transparent 40%),
+    radial-gradient(circle at bottom right,
+    rgba(200,169,106,.05),
+    transparent 45%);
+    pointer-events:none;
+}
+
+/* ==========================
+   CTA
+========================== */
+
+.footer-top{
+    position:relative;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:8rem 0;
+}
+
+.footer-cta{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:850px;
+}
+
+.footer-tag{
+    display:inline-block;
+    color:var(--color-secondary);
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:.8rem;
+    margin-bottom:1.2rem;
+}
+
+.footer-cta h2{
+    font-family:var(--heading-font);
+    font-size:clamp(3rem,7vw,5.5rem);
+    line-height:1.05;
+    margin-bottom:1.8rem;
+    color:#fff;
+}
+
+.footer-cta p{
+    max-width:700px;
+    margin:0 auto 3rem;
+    line-height:2;
+    color:rgba(255,255,255,.70);
+    font-size:1.05rem;
+}
+
+.footer-reserve-btn{
+    border:none;
+    outline:none;
+    cursor:pointer;
+    background:var(--color-secondary);
+    color:#111;
+    padding:1.1rem 2.8rem;
+    border-radius:999px;
+    font-size:1rem;
+    font-weight:700;
+    transition:.4s;
+}
+
+.footer-reserve-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:
+    0 18px 40px rgba(200,169,106,.28);
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+.footer-main{
+    display:grid;
+    grid-template-columns:
+    2fr
+    1fr
+    1fr
+    1.2fr;
+    gap:4rem;
+    padding:7rem 0;
+}
+
+.footer-main h3{
+    font-size:1.2rem;
+    margin-bottom:1.7rem;
+    color:#fff;
+    position:relative;
+}
+
+.footer-main h3::after{
+    content:"";
+    width:45px;
+    height:2px;
+    background:var(--color-secondary);
+    display:block;
+    margin-top:.7rem;
+}
+
+/* ==========================
+   BRAND
+========================== */
+
+.footer-brand h2{
+    font-family:var(--heading-font);
+    font-size:3rem;
+    letter-spacing:2px;
+    margin-bottom:1.5rem;
+    color:var(--color-secondary);
+}
+
+.footer-brand p{
+    color:rgba(255,255,255,.65);
+    line-height:2;
+    max-width:420px;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+.footer-links ul,
+.footer-hours ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    margin-bottom:1rem;
+}
+
+.footer-links a{
+    color:rgba(255,255,255,.72);
+    text-decoration:none;
+    transition:.35s;
+    position:relative;
+}
+
+.footer-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:var(--color-secondary);
+    transition:.35s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.footer-links a:hover::after{
+    width:100%;
+}
+
+/* ==========================
+   HOURS
+========================== */
+
+.footer-hours li{
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.9rem 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.footer-hours span{
+    color:rgba(255,255,255,.65);
+}
+
+.footer-hours strong{
+    color:#fff;
+    font-weight:600;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.footer-contact p{
+    color:rgba(255,255,255,.68);
+    line-height:1.9;
+    margin-bottom:1rem;
+}
+
+.footer-socials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    margin-top:2rem;
+}
+
+.footer-socials a{
+    text-decoration:none;
+    color:rgba(255,255,255,.70);
+    transition:.35s;
+}
+
+.footer-socials a:hover{
+    color:var(--color-secondary);
+}
+
+/* ==========================
+   BOTTOM
+========================== */
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.footer-bottom-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:2rem;
+    padding:2rem 0;
+}
+
+.footer-bottom p{
+    color:rgba(255,255,255,.55);
+}
+
+.footer-bottom-content div{
+    display:flex;
+    gap:2rem;
+}
+
+.footer-bottom-content a{
+    color:rgba(255,255,255,.60);
+    text-decoration:none;
+    transition:.35s;
+}
+
+.footer-bottom-content a:hover{
+    color:var(--color-secondary);
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+.footer-top,
+.footer-brand,
+.footer-links,
+.footer-hours,
+.footer-contact{
+    animation:fadeUp .9s ease both;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media(max-width:1100px){
+
+.footer-main{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:3rem;
+
+}
+
+.footer-brand{
+
+grid-column:span 2;
+
+}
+
+.footer-brand p{
+
+max-width:100%;
+
+}
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.footer-top{
+
+padding:6rem 0;
+
+}
+
+.footer-cta h2{
+
+font-size:2.8rem;
+
+}
+
+.footer-cta p{
+
+font-size:1rem;
+
+line-height:1.9;
+
+}
+
+.footer-main{
+
+grid-template-columns:1fr;
+
+padding:5rem 0;
+
+gap:3rem;
+
+text-align:center;
+
+}
+
+.footer-brand{
+
+grid-column:auto;
+
+}
+
+.footer-brand p{
+
+margin:auto;
+
+}
+
+.footer-main h3::after{
+
+margin:.7rem auto 0;
+
+}
+
+.footer-hours li{
+
+justify-content:center;
+flex-direction:column;
+align-items:center;
+
+}
+
+.footer-socials{
+
+justify-content:center;
+
+}
+
+.footer-bottom-content{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.footer-bottom-content div{
+
+justify-content:center;
+flex-wrap:wrap;
+gap:1.5rem;
+
+}
+
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media(max-width:480px){
+
+.footer-top{
+
+padding:5rem 0;
+
+}
+
+.footer-cta h2{
+
+font-size:2.3rem;
+
+}
+
+.footer-brand h2{
+
+font-size:2.3rem;
+
+}
+
+.footer-reserve-btn{
+
+width:100%;
+
+}
+
+.footer-main{
+
+padding:4rem 0;
+
+}
+
+}

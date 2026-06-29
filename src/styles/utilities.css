@@ -1,0 +1,41 @@
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--color-primary);
+}
+
+.section-subtitle {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}

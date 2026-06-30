@@ -1,0 +1,356 @@
+.menu-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* ===================================
+Overlay
+=================================== */
+
+.menu-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, .92) 0%,
+      rgba(8, 8, 8, .58) 45%,
+      rgba(8, 8, 8, .82) 100%
+    );
+}
+
+/* Luxury Gold Glow */
+
+.menu-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  top: -250px;
+  right: -250px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200,169,106,.18),
+      transparent 70%
+    );
+
+  filter: blur(70px);
+
+  z-index: 1;
+}
+
+/* Bottom Fade */
+
+.menu-hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 220px;
+
+  background: linear-gradient(
+      transparent,
+      rgba(8,8,8,.88)
+  );
+
+  z-index: 1;
+}
+
+/* ===================================
+Content
+=================================== */
+
+.menu-hero-content {
+  position: relative;
+  z-index: 5;
+
+  max-width: 900px;
+
+  margin: auto;
+
+  text-align: center;
+
+  color: white;
+
+  padding-top: 9rem;
+  padding-bottom: 6rem;
+}
+
+/* ===================================
+Tag
+=================================== */
+
+.menu-hero-content span {
+  display: inline-block;
+
+  color: var(--color-secondary);
+
+  text-transform: uppercase;
+
+  letter-spacing: 8px;
+
+  font-size: .8rem;
+
+  font-weight: 600;
+
+  /* margin-bottom: 2rem; */
+}
+
+/* ===================================
+Heading
+=================================== */
+
+.menu-hero h1 {
+  font-family: var(--heading-font);
+
+  font-size: clamp(4rem, 8vw, 7rem);
+
+  line-height: .95;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 2rem;
+
+  text-shadow:
+    0 15px 40px rgba(0,0,0,.45);
+}
+
+/* ===================================
+Paragraph
+=================================== */
+
+.menu-hero p {
+  max-width: 760px;
+
+  margin: auto;
+
+  color: rgba(255,255,255,.82);
+
+  line-height: 2;
+
+  font-size: 1.08rem;
+}
+
+/* ===================================
+Breadcrumb
+=================================== */
+
+.menu-breadcrumb {
+  margin-top: 3.5rem;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1rem 2rem;
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(18px);
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  color: white;
+}
+
+.menu-breadcrumb span {
+  color: rgba(255,255,255,.75);
+
+  letter-spacing: 2px;
+
+  font-size: .8rem;
+}
+
+.menu-breadcrumb strong {
+  color: var(--color-secondary);
+
+  letter-spacing: 2px;
+
+  font-size: .8rem;
+}
+
+.menu-breadcrumb .divider {
+  color: rgba(255,255,255,.4);
+}
+
+/* ===================================
+Scroll
+=================================== */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+  bottom: 45px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.hero-scroll span {
+  display: block;
+
+  width: 2px;
+  height: 70px;
+
+  background: rgba(255,255,255,.9);
+
+  animation: scrollLine 2s infinite;
+}
+
+/* ===================================
+Animations
+=================================== */
+
+.menu-hero-content span,
+.menu-hero h1,
+.menu-hero p,
+.menu-breadcrumb,
+.hero-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  animation: fadeUp .9s forwards;
+}
+
+.menu-hero h1 {
+  animation-delay: .2s;
+}
+
+.menu-hero p {
+  animation-delay: .4s;
+}
+
+.menu-breadcrumb {
+  animation-delay: .6s;
+}
+
+.hero-scroll {
+  animation-delay: .8s;
+}
+
+@keyframes fadeUp {
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes scrollLine {
+
+  0% {
+    transform: scaleY(.2);
+    opacity: .35;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(.2);
+    opacity: .35;
+  }
+
+}
+
+/* ===================================
+Tablet
+=================================== */
+
+@media (max-width: 992px) {
+
+  .menu-hero {
+    min-height: 90vh;
+    background-position: center;
+  }
+
+  .menu-hero-content {
+    padding-top: 8rem;
+  }
+
+  .menu-hero h1 {
+    font-size: 5rem;
+  }
+
+}
+
+/* ===================================
+Mobile
+=================================== */
+
+@media (max-width:768px) {
+
+  .menu-hero {
+    min-height: 85vh;
+    background-position: center;
+  }
+
+  .menu-hero-content {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+  }
+
+  .menu-hero-content span {
+    letter-spacing: 5px;
+    font-size: .72rem;
+  }
+
+  .menu-hero h1 {
+    font-size: 3.6rem;
+  }
+
+  .menu-hero p {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .menu-breadcrumb {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ===================================
+Small Mobile
+=================================== */
+
+@media (max-width:480px) {
+
+  .menu-hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+}

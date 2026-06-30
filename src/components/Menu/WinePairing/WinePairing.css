@@ -1,0 +1,383 @@
+.wine-section{
+    position:relative;
+    padding:10rem 0;
+    background:#090909;
+    overflow:hidden;
+}
+
+.wine-section::before{
+    content:"";
+    position:absolute;
+    top:-250px;
+    right:-250px;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(200,169,106,.12),
+        transparent 70%
+    );
+}
+
+.wine-section::after{
+    content:"";
+    position:absolute;
+    bottom:-250px;
+    left:-250px;
+    width:650px;
+    height:650px;
+    border-radius:50%;
+    background:radial-gradient(
+        circle,
+        rgba(200,169,106,.08),
+        transparent 70%
+    );
+}
+
+/* ================= Heading ================= */
+
+.wine-heading{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 5rem;
+}
+
+.wine-heading span{
+    display:inline-block;
+    color:var(--color-secondary);
+    text-transform:uppercase;
+    letter-spacing:6px;
+    font-size:.82rem;
+    font-weight:600;
+    margin-bottom:1rem;
+}
+
+.wine-heading h2{
+    color:#fff;
+    font-family:var(--heading-font);
+    font-size:clamp(3rem,6vw,5rem);
+    margin-bottom:1.5rem;
+}
+
+.wine-heading p{
+    color:rgba(255,255,255,.72);
+    line-height:2;
+    font-size:1.05rem;
+}
+
+/* ================= Grid ================= */
+
+.wine-grid{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:2rem;
+}
+
+/* ================= Card ================= */
+
+.wine-card{
+    display:flex;
+    gap:2rem;
+    align-items:center;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:.45s;
+
+    backdrop-filter:blur(14px);
+}
+
+.wine-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(200,169,106,.35);
+
+    box-shadow:
+    0 30px 70px rgba(0,0,0,.45);
+
+}
+
+/* ================= Image ================= */
+
+.wine-image{
+
+    position:relative;
+
+    width:240px;
+
+    height:100%;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+}
+
+.wine-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.7s;
+
+}
+
+.wine-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.wine-price{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:rgba(200,169,106,.95);
+
+    color:#111;
+
+    padding:.55rem 1rem;
+
+    border-radius:999px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+}
+
+/* ================= Content ================= */
+
+.wine-content{
+
+    padding:2.2rem 2rem 2.2rem 0;
+
+    flex:1;
+
+}
+
+.wine-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:1rem;
+
+}
+
+.wine-top span{
+
+    color:var(--color-secondary);
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    font-size:.74rem;
+
+    font-weight:600;
+
+}
+
+.wine-top small{
+
+    color:rgba(255,255,255,.45);
+
+    font-size:.8rem;
+
+}
+
+.wine-content h3{
+
+    color:white;
+
+    font-size:2rem;
+
+    font-family:var(--heading-font);
+
+    margin-bottom:1rem;
+
+}
+
+.wine-content p{
+
+    color:rgba(255,255,255,.68);
+
+    line-height:1.9;
+
+    margin-bottom:2rem;
+
+}
+
+/* ================= Pairing ================= */
+
+.wine-pairing{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-top:1.3rem;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.wine-pairing strong{
+
+    color:white;
+
+    font-size:.9rem;
+
+}
+
+.wine-pairing span{
+
+    color:var(--color-secondary);
+
+    font-weight:600;
+
+}
+
+/* ================= Hover Line ================= */
+
+.wine-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:0;
+
+    height:3px;
+
+    background:var(--color-secondary);
+
+    transition:.45s;
+
+}
+
+.wine-card:hover::after{
+
+    width:100%;
+
+}
+
+/* ================= Tablet ================= */
+
+@media(max-width:1100px){
+
+.wine-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:768px){
+
+.wine-section{
+
+padding:7rem 0;
+
+}
+
+.wine-card{
+
+flex-direction:column;
+
+}
+
+.wine-image{
+
+width:100%;
+
+height:320px;
+
+}
+
+.wine-content{
+
+padding:2rem;
+
+}
+
+.wine-content h3{
+
+font-size:1.8rem;
+
+}
+
+.wine-pairing{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:.7rem;
+
+}
+
+}
+
+/* ================= Small Mobile ================= */
+
+@media(max-width:480px){
+
+.wine-heading h2{
+
+font-size:2.6rem;
+
+}
+
+.wine-content{
+
+padding:1.5rem;
+
+}
+
+.wine-content h3{
+
+font-size:1.6rem;
+
+}
+
+.wine-image{
+
+height:260px;
+
+}
+
+}

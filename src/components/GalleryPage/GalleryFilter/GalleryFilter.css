@@ -1,0 +1,191 @@
+.gallery-filter{
+
+    padding:7rem 0 5rem;
+
+    background:#0d0d0d;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.gallery-filter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-220px;
+    right:-220px;
+
+    width:520px;
+    height:520px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.12),
+        transparent 70%
+    );
+
+    pointer-events:none;
+
+}
+
+.gallery-filter .container{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.gallery-filter-tag{
+
+    display:inline-block;
+
+    color:var(--color-secondary);
+
+    text-transform:uppercase;
+
+    letter-spacing:6px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:1rem;
+
+}
+
+.gallery-filter h2{
+
+    font-family:var(--heading-font);
+
+    color:#fff;
+
+    font-size:clamp(2.5rem,5vw,4.2rem);
+
+    margin-bottom:3rem;
+
+    line-height:1.1;
+
+}
+
+.gallery-filter-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:1rem;
+
+}
+
+.filter-btn{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#ddd;
+
+    padding:1rem 2rem;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:.35s ease;
+
+    backdrop-filter:blur(12px);
+
+}
+
+.filter-btn:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--color-secondary);
+
+    color:#fff;
+
+    background:rgba(200,169,106,.12);
+
+}
+
+.filter-btn.active{
+
+    background:var(--color-secondary);
+
+    color:#111;
+
+    border-color:var(--color-secondary);
+
+    font-weight:700;
+
+    box-shadow:
+    0 15px 35px rgba(200,169,106,.35);
+
+}
+
+@media(max-width:768px){
+
+.gallery-filter{
+
+padding:5rem 0 4rem;
+
+}
+
+.gallery-filter h2{
+
+font-size:2.4rem;
+
+}
+
+.gallery-filter-buttons{
+
+gap:.8rem;
+
+}
+
+.filter-btn{
+
+padding:.9rem 1.5rem;
+
+font-size:.9rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.gallery-filter-buttons{
+
+flex-direction:column;
+
+}
+
+.filter-btn{
+
+width:100%;
+
+max-width:300px;
+
+}
+
+}

@@ -1,0 +1,235 @@
+/* =====================================================
+   BEHIND THE SCENES
+===================================================== */
+
+.behind-scenes {
+  padding: 8rem 0;
+  background: #faf8f3;
+}
+
+.behind-scenes__container {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.behind-scenes__content {
+  max-width: 600px;
+}
+
+.behind-scenes__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 1.2rem;
+
+  color: #b88b2d;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.behind-scenes__title {
+  margin-bottom: 1.8rem;
+
+  color: #181818;
+
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.behind-scenes__description {
+  margin-bottom: 2.5rem;
+
+  color: #555;
+
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.behind-scenes__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  margin-bottom: 2.8rem;
+}
+
+.behind-scenes__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+
+  color: #222;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.behind-scenes__feature::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #c79b3b;
+
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.behind-scenes__button {
+  padding: 1rem 2.3rem;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #181818;
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+
+  transition:
+    transform .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
+}
+
+.behind-scenes__button:hover {
+  background: #2b2b2b;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.behind-scenes__image-wrapper {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  box-shadow: 0 35px 70px rgba(0,0,0,.18);
+}
+
+.behind-scenes__image {
+  width: 100%;
+  height: 720px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+.behind-scenes__image:hover {
+  transform: scale(1.05);
+}
+
+/* Decorative Frame */
+
+.behind-scenes__image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 22px;
+
+  border: 1px solid rgba(255,255,255,.22);
+
+  border-radius: 18px;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+
+  .behind-scenes {
+    padding: 6rem 0;
+  }
+
+  .behind-scenes__container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .behind-scenes__content {
+    max-width: 100%;
+  }
+
+  .behind-scenes__image {
+    height: 600px;
+  }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .behind-scenes {
+    padding: 5rem 0;
+  }
+
+  .behind-scenes__container {
+    width: 92%;
+    gap: 3rem;
+  }
+
+  .behind-scenes__title {
+    font-size: 2.2rem;
+  }
+
+  .behind-scenes__description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .behind-scenes__button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .behind-scenes__image {
+    height: 420px;
+  }
+
+}

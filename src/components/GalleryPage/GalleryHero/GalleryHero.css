@@ -1,0 +1,455 @@
+.gallery-hero{
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    isolation:isolate;
+}
+
+/* ================= Overlay ================= */
+
+.gallery-hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(8,8,8,.92) 0%,
+        rgba(8,8,8,.60) 45%,
+        rgba(8,8,8,.88) 100%
+    );
+
+    z-index:1;
+}
+
+/* Gold Glow */
+
+.gallery-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    top:-220px;
+
+    right:-180px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.20),
+        transparent 72%
+    );
+
+    filter:blur(40px);
+
+    z-index:1;
+}
+
+.gallery-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    bottom:-180px;
+
+    left:-140px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(200,169,106,.10),
+        transparent 72%
+    );
+
+    filter:blur(60px);
+
+    z-index:1;
+}
+
+/* ================= Content ================= */
+
+.gallery-hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:900px;
+
+    text-align:center;
+
+    color:white;
+
+    padding-top:8rem;
+
+    padding-bottom:5rem;
+}
+
+/* ================= Tag ================= */
+
+.gallery-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.8rem;
+
+    color:var(--color-secondary);
+
+    letter-spacing:7px;
+
+    text-transform:uppercase;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:2rem;
+}
+
+.gallery-tag::before,
+.gallery-tag::after{
+
+    content:"";
+
+    width:40px;
+
+    height:1px;
+
+    background:rgba(200,169,106,.7);
+}
+
+/* ================= Heading ================= */
+
+.gallery-hero h1{
+
+    font-family:var(--heading-font);
+
+    font-size:clamp(4rem,9vw,7rem);
+
+    line-height:.92;
+
+    letter-spacing:2px;
+
+    margin-bottom:2rem;
+
+    text-shadow:
+    0 8px 35px rgba(0,0,0,.35);
+}
+
+/* ================= Paragraph ================= */
+
+.gallery-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:1.08rem;
+
+    line-height:2;
+}
+
+/* ================= Buttons ================= */
+
+.gallery-buttons{
+
+    margin-top:3rem;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1.2rem;
+
+    flex-wrap:wrap;
+}
+
+.gallery-primary-btn{
+
+    border:none;
+
+    background:var(--color-secondary);
+
+    color:#111;
+
+    padding:1rem 2.6rem;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+.gallery-primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 40px rgba(200,169,106,.35);
+}
+
+.gallery-secondary-btn{
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.22);
+
+    padding:1rem 2.5rem;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.gallery-secondary-btn:hover{
+
+    background:white;
+
+    color:#111;
+}
+
+/* ================= Scroll ================= */
+
+.gallery-scroll{
+
+    margin-top:6rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:.8rem;
+}
+
+.gallery-scroll span{
+
+    font-size:.72rem;
+
+    color:white;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+}
+
+.scroll-line{
+
+    width:2px;
+
+    height:70px;
+
+    background:white;
+
+    animation:scrollAnimation 2s infinite;
+}
+
+/* ================= Animation ================= */
+
+.gallery-tag,
+.gallery-hero h1,
+.gallery-hero p,
+.gallery-buttons,
+.gallery-scroll{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:fadeUp .9s forwards;
+}
+
+.gallery-hero h1{
+
+    animation-delay:.2s;
+}
+
+.gallery-hero p{
+
+    animation-delay:.4s;
+}
+
+.gallery-buttons{
+
+    animation-delay:.6s;
+}
+
+.gallery-scroll{
+
+    animation-delay:.8s;
+}
+
+@keyframes fadeUp{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+@keyframes scrollAnimation{
+
+    0%{
+
+        transform:scaleY(.3);
+
+        opacity:.35;
+    }
+
+    50%{
+
+        transform:scaleY(1);
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:scaleY(.3);
+
+        opacity:.35;
+    }
+}
+
+/* ================= Tablet ================= */
+
+@media(max-width:992px){
+
+.gallery-hero{
+
+background-position:center;
+}
+
+.gallery-hero h1{
+
+font-size:5rem;
+}
+
+.gallery-hero-content{
+
+max-width:760px;
+}
+
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:768px){
+
+.gallery-hero{
+
+min-height:92vh;
+
+background-position:center;
+}
+
+.gallery-hero-content{
+
+padding-top:7rem;
+
+padding-bottom:4rem;
+}
+
+.gallery-hero h1{
+
+font-size:3.8rem;
+}
+
+.gallery-hero p{
+
+font-size:1rem;
+
+line-height:1.9;
+}
+
+.gallery-buttons{
+
+flex-direction:column;
+
+align-items:center;
+}
+
+.gallery-primary-btn,
+.gallery-secondary-btn{
+
+width:100%;
+
+max-width:320px;
+}
+
+.gallery-scroll{
+
+margin-top:4rem;
+}
+
+}
+
+/* ================= Small Phones ================= */
+
+@media(max-width:480px){
+
+.gallery-hero h1{
+
+font-size:3rem;
+}
+
+.gallery-tag{
+
+letter-spacing:4px;
+
+font-size:.72rem;
+}
+
+.gallery-tag::before,
+.gallery-tag::after{
+
+width:22px;
+}
+
+.gallery-scroll{
+
+display:none;
+}
+
+}

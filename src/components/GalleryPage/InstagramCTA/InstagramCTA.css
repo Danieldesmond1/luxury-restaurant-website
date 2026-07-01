@@ -1,0 +1,272 @@
+/* =====================================================
+   INSTAGRAM CTA
+===================================================== */
+
+.instagram-cta {
+  position: relative;
+
+  padding: 8rem 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d0d0d 0%,
+      #171717 50%,
+      #101010 100%
+    );
+}
+
+/* Decorative Glow */
+
+.instagram-cta::before {
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  right: -120px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(199, 161, 90, 0.08);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+.instagram-cta::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -220px;
+  left: -160px;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.03);
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.instagram-cta__container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(900px, 92%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.instagram-cta__eyebrow {
+  display: inline-block;
+
+  margin-bottom: 1.4rem;
+
+  color: #c7a15a;
+
+  font-size: .8rem;
+  font-weight: 600;
+
+  letter-spacing: .28em;
+
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.instagram-cta__title {
+  margin-bottom: 1.8rem;
+
+  color: #fff;
+
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.instagram-cta__description {
+  max-width: 700px;
+
+  margin: 0 auto 2.5rem;
+
+  color: rgba(255,255,255,.72);
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+}
+
+/* =====================================================
+   HANDLE
+===================================================== */
+
+.instagram-cta__handle {
+  margin-bottom: 2.8rem;
+
+  color: #c7a15a;
+
+  font-size: 1.05rem;
+
+  font-weight: 600;
+
+  letter-spacing: .12em;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.instagram-cta__button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: .8rem;
+
+  padding: 1rem 2.4rem;
+
+  border: 1px solid rgba(199,161,90,.45);
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: .95rem;
+
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  transition:
+    background .35s ease,
+    border-color .35s ease,
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.instagram-cta__button:hover {
+
+  background: #c7a15a;
+
+  color: #111;
+
+  border-color: #c7a15a;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 45px rgba(199,161,90,.28);
+}
+
+/* Arrow */
+
+.instagram-cta__arrow {
+  display: inline-block;
+
+  transition:
+    transform .35s ease;
+}
+
+.instagram-cta__button:hover
+.instagram-cta__arrow {
+
+  transform: translateX(6px);
+
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+
+  .instagram-cta {
+
+    padding: 6rem 0;
+
+  }
+
+  .instagram-cta__title {
+
+    font-size: 3.2rem;
+
+  }
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .instagram-cta {
+
+    padding: 5rem 0;
+
+  }
+
+  .instagram-cta__container {
+
+    width: 92%;
+
+  }
+
+  .instagram-cta__title {
+
+    font-size: 2.3rem;
+
+  }
+
+  .instagram-cta__description {
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+
+  }
+
+  .instagram-cta__button {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+}
